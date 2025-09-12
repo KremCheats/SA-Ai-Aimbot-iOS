@@ -3,7 +3,11 @@
 
 This project provides a tool to analyze a game's screen in real-time using a CoreML model trained on YOLOv5. It captures the screen, runs object detection, and draws bounding boxes as an overlay.
 
----
+![photo_5918232791361898398_y](https://github.com/user-attachments/assets/58961132-0690-45cf-aff1-fd663da6290d)
+![photo_5918232791361898401_y](https://github.com/user-attachments/assets/67778e84-b2d2-49d7-a1b6-c4f42482bd41)
+![photo_5918232791361898400_y](https://github.com/user-attachments/assets/4e42fc0f-e14f-47fd-b97e-f2a4ea95b95d)
+![photo_5918232791361898399_y](https://github.com/user-attachments/assets/8b29e259-17f6-40af-ad66-f33f730455d1)
+
 
 ## Dataset Preparation
 
