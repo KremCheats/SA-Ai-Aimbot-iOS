@@ -1,0 +1,48 @@
+name: Build iOS dylib
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Theos
+        uses: waruhachi/theos-action@v2.4.10
+        with:
+          theos-src: theos/theos
+          theos-branch: master
+          sdks-src: theos/sdks
+          sdks-branch: master
+
+      - name: Build dylib
+        shell: bash
+        run: |
+          set -euo pipefail
+          make clean
+          make -j2 FINALPACKAGE=1
+
+          mkdir -p artifacts
+          DYLIB="$(find .theos -type f -name 'KremAimbot.dylib' | head -n 1)"
+          test -n "$DYLIB"
+          cp "$DYLIB" artifacts/KremAimbot.dylib
+
+          file artifacts/KremAimbot.dylib
+          lipo -info artifacts/KremAimbot.dylib
+
+      - name: Upload dylib
+        uses: actions/upload-artifact@v4
+        with:
+          name: KremAimbot-iOS
+          path: artifacts/KremAimbot.dylib
+          if-no-files-found: error
