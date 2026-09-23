@@ -1,0 +1,8 @@
+Package: com.kremcheats.kremaimbot
+Name: KremAimbot
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: iOS CoreML/Vision dylib build for the existing SA-Ai-Aimbot-iOS source.
+Maintainer: KremCheats
+Author: KremCheats
+Section: Development
