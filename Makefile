@@ -6,8 +6,7 @@ include $(THEOS)/makefiles/common.mk
 LIBRARY_NAME = KremAimbot
 
 KremAimbot_FILES = Tweak.mm
-KremAimbot_CFLAGS = -fobjc-arc -I$(THEOS)/include
-KremAimbot_CCFLAGS = -std=c++17
+KremAimbot_CFLAGS = -fobjc-arc -fno-modules -I$(THEOS)/include
 KremAimbot_FRAMEWORKS = Foundation UIKit QuartzCore CoreML Vision
 KremAimbot_PRIVATE_FRAMEWORKS = IOKit
 KremAimbot_INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries
